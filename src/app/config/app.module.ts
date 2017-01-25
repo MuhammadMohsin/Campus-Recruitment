@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig } from './environments/firebase.config';
+import {MaterialModule} from '@angular/material';
 import {RouterModule} from "@angular/router";
 import {routes} from "./router/routing";
 import { AppComponent } from '../components/root.component/app.component';
@@ -21,6 +22,7 @@ import { LoginComponent } from '../components/login.component/login.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),
+    MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
