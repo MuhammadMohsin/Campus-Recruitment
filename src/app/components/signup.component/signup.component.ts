@@ -59,15 +59,18 @@ export class SignupComponent {
 
       console.log(this.companyObj);
 
-      this.afRef.auth.createUser({ email: this.companyObj.email, password: this.companyObj.password });
-
-      this.companyObj = {
+      this.afRef.auth.createUser({ email: this.companyObj.email, password: this.companyObj.password }).then(data=>{
+        console.log(data.uid);
+        this.afRef.database.object("/users/"+data.uid).set(this.companyObj);
+        alert("Successfully user created ");
+        this.companyObj = {
         email: "",
         companyName: "",
         password: "",
         role: ""
       };
-      alert("Successfully user created ");
+      });
+      
     }
     else {
       alert("Please fill all fields");
