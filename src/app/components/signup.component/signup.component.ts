@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class SignupComponent {
   userObj = {};
+  companyObj = {};
   signupUser(){
     console.log(this.userObj);
+  }
+  signupCompany(){
+    console.log(this.companyObj);
   }
 }
