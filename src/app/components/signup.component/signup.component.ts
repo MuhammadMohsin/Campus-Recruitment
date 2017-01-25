@@ -24,8 +24,9 @@ export class SignupComponent {
   };
 
   usersRef;
-
+  afRef : any;
   constructor(private af: AngularFire) {
+    this.afRef = af;
     this.usersRef = af.database.list("/users");
   }
 
@@ -57,6 +58,9 @@ export class SignupComponent {
       this.usersRef.push(this.companyObj);
 
       console.log(this.companyObj);
+
+      this.afRef.auth.createUser({ email: this.companyObj.email, password: this.companyObj.password });
+
       this.companyObj = {
         email: "",
         companyName: "",

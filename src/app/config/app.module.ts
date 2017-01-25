@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
-import { firebaseConfig } from './environments/firebase.config';
+import { firebaseConfig, myFirebaseAuthConfig } from './environments/firebase.config';
 import {MaterialModule} from '@angular/material';
 import {RouterModule} from "@angular/router";
 import {routes} from "./router/routing";
@@ -23,7 +23,7 @@ import { LoginComponent } from '../components/login.component/login.component';
     HttpModule,
     RouterModule.forRoot(routes),
     MaterialModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
