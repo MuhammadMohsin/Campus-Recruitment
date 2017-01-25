@@ -1,1 +1,48 @@
-<h1>Signup screen</h1>
+<md-toolbar color="primary">
+  Campus Recruitment System
+</md-toolbar>
+
+<md-card  class="signup-container">
+  <md-card-title>Signup</md-card-title>
+  <md-card-content>
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.username" type="text" placeholder="Enter Email">
+      </md-input-container>
+    </div>
+
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.age" type="text" placeholder="Enter Age">
+      </md-input-container>
+    </div>
+
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.collegeName" type="text" placeholder="Enter College Name">
+      </md-input-container>
+    </div>
+
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.lastDegree" type="text" placeholder="Enter Degree Name">
+      </md-input-container>
+    </div>
+
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.marksObtain" type="text" placeholder="Enter Marks Obtain">
+      </md-input-container>
+    </div>
+
+    <div>
+      <md-input-container>
+        <input md-input [(ngModel)]="userObj.password" type="password" placeholder="Create Password">
+      </md-input-container>
+    </div>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button md-raised-button color="warn" [routerLink]="['/login']">Cancel</button>
+    <button md-button md-raised-button color="primary" (click)="signupUser()">Sign up </button>
+  </md-card-actions>
+</md-card>
