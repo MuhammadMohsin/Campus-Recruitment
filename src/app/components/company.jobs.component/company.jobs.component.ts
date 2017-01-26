@@ -37,4 +37,8 @@ export class CompanyJobComponent {
   createJob(){
     this.router.navigate(["/vacancy"]);
   }
+
+  logout(){
+    this.userService.logoutUser();
+  }
 }

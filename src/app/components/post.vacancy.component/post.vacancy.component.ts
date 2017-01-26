@@ -20,10 +20,12 @@ export class PostpostVacancyComponent {
   vacanciesRef;
   afRef:any;
   authUserData;
+  userService;
   router;
 
   constructor(private af:AngularFire, private _userService: UserService, _router : Router) {
     this.authUserData = _userService.getUserData();
+    this.userService = _userService;
     this.afRef = af;
     this.router = _router;
     this.vacanciesRef = af.database.list("/jobs");
@@ -60,5 +62,9 @@ export class PostpostVacancyComponent {
     else{
       alert("Please fill all fields");
     }
+  }
+
+  logout(){
+    this.userService.logoutUser();
   }
 }

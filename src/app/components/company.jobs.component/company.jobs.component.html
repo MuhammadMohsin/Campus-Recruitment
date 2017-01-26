@@ -1,6 +1,9 @@
 <md-toolbar color="primary">
   <span> My Posted Jobs </span>
-  <button md-button md-raised-button color="warn" (click)="createJob()" style="position: absolute; right: 23px;"> Create New</button>
+  <button md-button md-raised-button color="warn" (click)="createJob()" style="position: absolute; right: 110px;"> Create New</button>
+  <a (click)="logout()" style="position: absolute; right: 70px; top: 18px;cursor:pointer;">
+    <img md-list-avatar src="/assets/logout.png" alt="logout" height="30px">
+  </a>
 </md-toolbar>
 
 <md-list>

@@ -39,4 +39,8 @@ export class JobsTimelineComponent {
     console.log(jobObj.$key);
     this.alljobs.update(jobObj.$key, { respondBy: this.authUser.$key });
   }
+
+  logout(){
+    this.userService.logoutUser();
+  }
 }
