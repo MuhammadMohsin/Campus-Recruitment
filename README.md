@@ -1,3 +1,7 @@
 # CampusRecruitment
 
-This project was deployed on firebase. Click [a link](https://github.com/user/repo/blob/branch/other_file.md) to check on firebase.
+This project was deployed on firebase (https://campus-recruitment.firebaseapp.com/). 
+<br />
+Click [here](https://campus-recruitment.firebaseapp.com/) to check on firebase.
+
+
