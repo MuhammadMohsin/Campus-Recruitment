@@ -42,7 +42,16 @@ export class SignupComponent {
         this.afRef.database.object("/users/" + data.uid).set(this.userObj);
         alert("Successfully user created ");
 
-        //this.userObj = {};
+        //clear data fields
+        this.userObj = {
+          useremail: "",
+          age: "",
+          collegeName: "",
+          lastDegree: "",
+          marksObtain: "",
+          password: "",
+          role: ""
+        };
       });
 
     }
@@ -59,7 +68,14 @@ export class SignupComponent {
         console.log(data.uid);
         this.afRef.database.object("/users/" + data.uid).set(this.companyObj);
         alert("Successfully user created ");
-        //this.companyObj = {};
+
+        //clear data fields
+        this.companyObj = {
+          email: "",
+          companyName: "",
+          password: "",
+          role: ""
+        };
       });
 
     }

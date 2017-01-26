@@ -11,6 +11,7 @@ import { AppComponent } from '../components/root.component/app.component';
 import { SignupComponent } from '../components/signup.component/signup.component';
 import { LoginComponent } from '../components/login.component/login.component';
 import { PostpostVacancyComponent } from '../components/post.vacancy.component/post.vacancy.component'
+import {UserService} from "../services/user.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { PostpostVacancyComponent } from '../components/post.vacancy.component/p
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

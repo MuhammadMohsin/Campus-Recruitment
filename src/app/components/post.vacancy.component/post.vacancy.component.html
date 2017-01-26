@@ -1,1 +1,55 @@
-<h1>post.vacancy.component</h1>
+<md-toolbar color="primary">
+  Company Portal
+</md-toolbar>
+
+<md-grid-list cols="3">
+  <md-grid-tile [colspan]="1" [rowspan]="1"></md-grid-tile>
+
+  <md-grid-tile [colspan]="1" [rowspan]="1" style="height: 150px">
+
+    <div class="example-form">
+
+      <md-card class="example-card">
+        <md-card-header>
+          <md-card-title>
+            <h3>Post New Vacancy</h3>
+          </md-card-title>
+        </md-card-header>
+        <md-card-content>
+
+          <div>
+            <md-input-container class="example-full-width">
+              <input md-input placeholder="Job Designation" [(ngModel)]="job.title">
+            </md-input-container>
+          </div>
+
+          <div>
+            <md-input-container class="example-full-width">
+              <input md-input placeholder="Job Details" [(ngModel)]="job.details">
+            </md-input-container>
+          </div>
+
+          <div>
+            <md-input-container class="example-full-width">
+              <input md-input placeholder="Salary" [(ngModel)]="job.salary">
+            </md-input-container>
+          </div>
+
+          <md-select placeholder="JobType" name="JobType" class="example-full-width" [(ngModel)]="job.type">
+            <md-option value="Part Time">Part Time</md-option>
+            <md-option value="Full Time">Full Time</md-option>
+          </md-select>
+
+        </md-card-content>
+        <md-card-actions class="text-right padding-right-20 padding-bottom-10">
+          <span class="example-spacer"></span>
+          <button md-button md-raised-button color="primary" (click)="postJob()">Post</button>
+        </md-card-actions>
+      </md-card>
+
+    </div>
+
+  </md-grid-tile>
+
+  <md-grid-tile [colspan]="1" [rowspan]="1"></md-grid-tile>
+</md-grid-list>
