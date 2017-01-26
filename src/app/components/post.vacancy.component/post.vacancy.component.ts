@@ -34,6 +34,7 @@ export class PostpostVacancyComponent {
   postJob(){
     if(this.job.title.trim() != "" && this.job.details.trim() != "" && this.job.salary.trim() != "" && this.job.type.trim() != ""){
       let afJobObj = {
+        company:this.authUserData.companyName,
         title:this.job.title,
         details:this.job.details,
         salary:this.job.salary,

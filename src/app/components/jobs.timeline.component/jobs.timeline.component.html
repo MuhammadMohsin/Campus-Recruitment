@@ -1,0 +1,22 @@
+<md-toolbar color="primary">
+  Hot Vacancies
+</md-toolbar>
+
+<md-list>
+  <div *ngFor="let job of postedVacancies">
+    <md-list-item>
+      <img md-list-avatar src="/assets/document.png" alt="profile picture">
+      <h1 md-line> <b>Company:  {{job.company}} </b> </h1>
+      <h3 md-line> <b>Title: </b>{{job.title }} </h3>
+      <p md-line>
+        <span> <b>Job Details: </b> {{job.details}} </span>
+      </p>
+      <p md-line>
+        <span> <b>Salary: </b> {{job.salary}} </span>
+      </p>
+      <button *ngIf="(job.respondBy == '')" md-button md-raised-button color="primary" (click)="applyJob(job)" style="position: absolute; right: 23px;"> Apply</button>
+      <div *ngIf="(job.respondBy != '')" style="position: absolute; right: 50px;"> <b>Done</b></div>
+    </md-list-item>
+    <md-divider></md-divider>
+  </div>
+</md-list>

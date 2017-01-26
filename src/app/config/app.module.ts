@@ -13,6 +13,7 @@ import { LoginComponent } from '../components/login.component/login.component';
 import { PostpostVacancyComponent } from '../components/post.vacancy.component/post.vacancy.component'
 import { CompanyJobComponent } from '../components/company.jobs.component/company.jobs.component'
 import {UserService} from "../services/user.service";
+import {JobsTimelineComponent} from "../components/jobs.timeline.component/jobs.timeline.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {UserService} from "../services/user.service";
     LoginComponent,
     SignupComponent,
     PostpostVacancyComponent,
-    CompanyJobComponent
+    CompanyJobComponent,
+    JobsTimelineComponent
   ],
   imports: [
     BrowserModule,

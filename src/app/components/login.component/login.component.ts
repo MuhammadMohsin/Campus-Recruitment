@@ -32,6 +32,9 @@ export class LoginComponent {
             if(data.role =="company"){
               this.router.navigate(["/myjobs"]);
             }
+            else{
+              this.router.navigate(["/jobs"]);
+            }
           });
 
       }, function (err) {
