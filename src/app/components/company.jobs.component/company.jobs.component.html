@@ -17,6 +17,12 @@
       <p md-line>
         <span> <b>Salary: </b> {{job.salary}} </span>
       </p>
+      <p md-line *ngIf="(job.respondBy != '')">
+        <span> 1 person responded on your job. Give below id to admin to get details <small>(sorry for inconvenience) </small>
+          <br/>
+          <b>{{job.respondBy}}</b>
+        </span>
+      </p>
     </md-list-item>
     <md-divider></md-divider>
   </div>
