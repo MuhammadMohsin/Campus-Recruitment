@@ -4,6 +4,7 @@ import {SignupComponent} from "../../components/signup.component/signup.componen
 import {PostpostVacancyComponent} from "../../components/post.vacancy.component/post.vacancy.component";
 import {CompanyJobComponent} from "../../components/company.jobs.component/company.jobs.component";
 import {JobsTimelineComponent} from "../../components/jobs.timeline.component/jobs.timeline.component";
+import {AdminPanelComponent} from "../../components/admin.panel.component/admin.panel.component"
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'jobs',
     component: JobsTimelineComponent
+  },
+  {
+    path: 'admin',
+    component: AdminPanelComponent
   }
 ];

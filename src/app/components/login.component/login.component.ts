@@ -32,8 +32,11 @@ export class LoginComponent {
             if(data.role =="company"){
               this.router.navigate(["/myjobs"]);
             }
-            else{
+            else if(data.role =="student"){
               this.router.navigate(["/jobs"]);
+            }
+            else{
+              this.router.navigate(["/admin"])
             }
           });
 

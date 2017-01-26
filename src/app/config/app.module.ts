@@ -14,6 +14,7 @@ import { PostpostVacancyComponent } from '../components/post.vacancy.component/p
 import { CompanyJobComponent } from '../components/company.jobs.component/company.jobs.component'
 import {UserService} from "../services/user.service";
 import {JobsTimelineComponent} from "../components/jobs.timeline.component/jobs.timeline.component";
+import {AdminPanelComponent} from "../components/admin.panel.component/admin.panel.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {JobsTimelineComponent} from "../components/jobs.timeline.component/jobs.
     SignupComponent,
     PostpostVacancyComponent,
     CompanyJobComponent,
-    JobsTimelineComponent
+    JobsTimelineComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
