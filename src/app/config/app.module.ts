@@ -15,7 +15,7 @@ import { CompanyJobComponent } from '../components/company.jobs.component/compan
 import {UserService} from "../services/user.service";
 import {JobsTimelineComponent} from "../components/jobs.timeline.component/jobs.timeline.component";
 import {AdminPanelComponent} from "../components/admin.panel.component/admin.panel.component";
-
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +34,7 @@ import {AdminPanelComponent} from "../components/admin.panel.component/admin.pan
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig,myFirebaseAuthConfig)
   ],
-  providers: [UserService],
+  providers: [UserService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
