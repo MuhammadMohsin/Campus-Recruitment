@@ -11,6 +11,7 @@ import { AppComponent } from '../components/root.component/app.component';
 import { SignupComponent } from '../components/signup.component/signup.component';
 import { LoginComponent } from '../components/login.component/login.component';
 import { PostpostVacancyComponent } from '../components/post.vacancy.component/post.vacancy.component'
+import { CompanyJobComponent } from '../components/company.jobs.component/company.jobs.component'
 import {UserService} from "../services/user.service";
 
 @NgModule({
@@ -18,7 +19,8 @@ import {UserService} from "../services/user.service";
     AppComponent,
     LoginComponent,
     SignupComponent,
-    PostpostVacancyComponent
+    PostpostVacancyComponent,
+    CompanyJobComponent
   ],
   imports: [
     BrowserModule,

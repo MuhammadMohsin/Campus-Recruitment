@@ -30,7 +30,7 @@ export class LoginComponent {
             this.userService.setUserData(data);
             this.userAuth = data;
             if(data.role =="company"){
-              this.router.navigate(["/vacancy"]);
+              this.router.navigate(["/myjobs"]);
             }
           });
 

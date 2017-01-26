@@ -1,0 +1,20 @@
+<md-toolbar color="primary">
+  <span> My Posted Jobs </span>
+  <button md-button md-raised-button color="warn" (click)="createJob()" style="position: absolute; right: 23px;"> Create New</button>
+</md-toolbar>
+
+<md-list>
+  <div *ngFor="let job of postedVacancies">
+    <md-list-item>
+      <img md-list-avatar src="/assets/document.png" alt="profile picture">
+      <h3 md-line> <b>Title: </b>{{job.title }} </h3>
+      <p md-line>
+        <span> <b>Job Details: </b> {{job.details}} </span>
+      </p>
+      <p md-line>
+        <span> <b>Salary: </b> {{job.salary}} </span>
+      </p>
+    </md-list-item>
+    <md-divider></md-divider>
+  </div>
+</md-list>

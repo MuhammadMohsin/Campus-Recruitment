@@ -11,9 +11,11 @@ export class UserService {
     this.userObj = data;
     console.log("saving in service");
     console.log(data, "saving in service");
+    localStorage.setItem("userData", data);
   }
   getUserData(){
-    return this.userObj;
+    let userObjTemp = localStorage.getItem("userData")
+    return this.userObj || userObjTemp;
   }
 
 }
