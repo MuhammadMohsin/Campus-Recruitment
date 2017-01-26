@@ -13,17 +13,23 @@ export class CompanyJobComponent {
   router;
   userService;
   postedVacancies;
+  authUser;
 
   constructor(private af: AngularFire, private _router: Router, private _userService: UserService){
     this.afRef = af;
     this.router = _router;
     this.userService = _userService;
-
+    this.authUser = _userService.getUserData();
     this.afRef.database.list("/jobs")
       .subscribe(
         value=>{
+          let myvalue = value.filter(job=>{
+            console.log(job.postedBy,  this.authUser.$key)
+            return job.postedBy == this.authUser.$key;
+          });
           console.log(value);
-          this.postedVacancies = value;
+
+          this.postedVacancies = myvalue;
         }
       )
   }
