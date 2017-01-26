@@ -41,4 +41,7 @@ export class AdminPanelComponent {
     this.allusersRef.remove(userObj.$key);
   }
 
+  logout(){
+    this.userService.logoutUser();
+  }
 }
