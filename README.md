@@ -11,7 +11,6 @@ Password: 123123
 Email: pana@gmail.com  <br/>
 Password: 123123
 
-<br />
 ### Student account <br/>
 Email: mohsin@gmail.com  <br/>
 Password: 123123
