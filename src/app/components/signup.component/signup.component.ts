@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AngularFire} from 'angularfire2'
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'login',
@@ -25,8 +26,10 @@ export class SignupComponent {
 
   usersRef;
   afRef:any;
+  router;
 
-  constructor(private af:AngularFire) {
+  constructor(private af:AngularFire, _router: Router) {
+    this.router = _router;
     this.afRef = af;
     this.usersRef = af.database.list("/users");
   }
@@ -52,6 +55,7 @@ export class SignupComponent {
           password: "",
           role: ""
         };
+        this.router.navigate(["/login"]);
       });
 
     }
@@ -76,6 +80,7 @@ export class SignupComponent {
           password: "",
           role: ""
         };
+        this.router.navigate(["/login"]);
       });
 
     }
