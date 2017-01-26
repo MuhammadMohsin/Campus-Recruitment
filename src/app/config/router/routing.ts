@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import {LoginComponent} from "../../components/login.component/login.component";
 import {SignupComponent} from "../../components/signup.component/signup.component";
+import {PostpostVacancyComponent} from "../../components/post.vacancy.component/post.vacancy.component";
 
 export const routes: Routes = [
   {
@@ -15,5 +16,10 @@ export const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'vacancy',
+    component: PostpostVacancyComponent
+
   }
 ];

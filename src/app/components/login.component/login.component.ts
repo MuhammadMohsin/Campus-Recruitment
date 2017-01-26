@@ -19,7 +19,16 @@ export class LoginComponent {
     this.afRef.auth.login({ email: this.userObj.email, password: this.userObj.password })
       .then(auth => {
         console.log(auth);
-        this.userAuth = auth;
+        this.afRef.database.object("/users/"+auth.uid)
+          .subscribe(data=>{
+            console.log(data);
+            this.userAuth = data;
+            if(data.role =="company"){
+              //this.router.navigate("/vacancy")
+              alert("role in company")
+            }
+          })
+
         alert("user authenticated")
       }, function (err) {
         console.log(err);

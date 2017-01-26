@@ -8,7 +8,7 @@ import {AngularFire} from 'angularfire2'
 })
 export class SignupComponent {
   userObj = {
-    username: "",
+    useremail: "",
     age: "",
     collegeName: "",
     lastDegree: "",
@@ -24,28 +24,27 @@ export class SignupComponent {
   };
 
   usersRef;
-  afRef : any;
-  constructor(private af: AngularFire) {
+  afRef:any;
+
+  constructor(private af:AngularFire) {
     this.afRef = af;
     this.usersRef = af.database.list("/users");
   }
 
   signupUser() {
-    if (this.userObj.username.trim() != "" && this.userObj.age.trim() != "" && this.userObj.collegeName.trim() != "" &&
+    if (this.userObj.useremail.trim() != "" && this.userObj.age.trim() != "" && this.userObj.collegeName.trim() != "" &&
       this.userObj.lastDegree.trim() != "" && this.userObj.marksObtain.trim() != "" && this.userObj.password.trim() != "") {
       console.log(this.userObj);
       this.userObj.role = "student";
-      this.usersRef.push(this.userObj);
-      this.userObj = {
-        username: "",
-        age: "",
-        collegeName: "",
-        lastDegree: "",
-        marksObtain: "",
-        password: "",
-        role: ""
-      };
-      alert("Successfully user created ");
+
+      this.afRef.auth.createUser({email: this.userObj.useremail, password: this.userObj.password}).then(data=> {
+        console.log(data.uid);
+        this.afRef.database.object("/users/" + data.uid).set(this.userObj);
+        alert("Successfully user created ");
+
+        //this.userObj = {};
+      });
+
     }
     else {
       alert("Please fill all fields");
@@ -55,22 +54,14 @@ export class SignupComponent {
   signupCompany() {
     if (this.companyObj.email.trim() != "" && this.companyObj.companyName.trim() != "" && this.companyObj.password.trim() != "") {
       this.companyObj.role = "company";
-      this.usersRef.push(this.companyObj);
-
       console.log(this.companyObj);
-
-      this.afRef.auth.createUser({ email: this.companyObj.email, password: this.companyObj.password }).then(data=>{
+      this.afRef.auth.createUser({email: this.companyObj.email, password: this.companyObj.password}).then(data=> {
         console.log(data.uid);
-        this.afRef.database.object("/users/"+data.uid).set(this.companyObj);
+        this.afRef.database.object("/users/" + data.uid).set(this.companyObj);
         alert("Successfully user created ");
-        this.companyObj = {
-        email: "",
-        companyName: "",
-        password: "",
-        role: ""
-      };
+        //this.companyObj = {};
       });
-      
+
     }
     else {
       alert("Please fill all fields");

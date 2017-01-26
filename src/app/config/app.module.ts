@@ -10,12 +10,14 @@ import {routes} from "./router/routing";
 import { AppComponent } from '../components/root.component/app.component';
 import { SignupComponent } from '../components/signup.component/signup.component';
 import { LoginComponent } from '../components/login.component/login.component';
+import { PostpostVacancyComponent } from '../components/post.vacancy.component/post.vacancy.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PostpostVacancyComponent
   ],
   imports: [
     BrowserModule,
